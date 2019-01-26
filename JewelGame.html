@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+   <meta name="viewport" content="width=device-width, initial-scale=4.0">
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"|script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/Users/ebonydavis/code/Homework/Assignment4/style.css">
+
+	<title>Jeweled</title>
+	
+</head>
+
+<body>	
+
+	<div class="container">
+		<h2>Click a jewel to start game, Refresh to play again!</h2>
+
+		<span class="center">
+			<span id="count"></span> 
+
+			<div>
+
+			<button id="crystal1"><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRSgMfoZczWumNTiwF_8_aMkRTQrpWxMjyi8991qdNv6L1oE9bJ" height="200" width="150"></button>
+
+			<button id="crystal2"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT42WSNtsdeBT1WMCX2zl5L6QkkbGW0orc24vhevOJeSBZW87do" height="200" width="150"></button>
+
+
+			<button id="crystal3"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ_1HkjeUml55bvk1EYBm5XYTcv2Lve8jGZVV6x2UQRlWOzLbbKcQ" height="200" width="150"></button>
+
+			<button id="crystal4"><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSoNaEuVaL-hn3K5_KvjMxNNnWuySaC13ThSyUO42kB4iBgYKai" height="200" width="150"></button>
+			</div>
+		</span>
+	</div>
+
+<!-- Results HTML -->
+
+<div id= 'theNumber'></div>
+	<p id='wins'></p>
+	<p id='losses'></p>
+
+<script type="text/javascript">
+
+// Declaring Variables
+	var winningNumber = Math.floor(Math.random()* 100)  
+	var crystal1 = Math.floor(Math.random()* 10)
+	var crystal2 = Math.floor(Math.random()* 10)
+	var crystal3 = Math.floor(Math.random()* 10)
+	var crystal4 = Math.floor(Math.random()* 10)
+	var count = 0;
+	var wins = 0;
+	var losses = 0;
+
+// On Page Load
+
+	$('#theNumber').text('The Winning Number is:' + ' ' + winningNumber);
+
+	$(document).ready(function() {
+	function reset() {
+		
+	 winningNumber = Math.floor(Math.random()* 100)  
+	 crystal1 = Math.floor(Math.random()* 10)
+	 crystal2 = Math.floor(Math.random()* 10)
+	 crystal3 = Math.floor(Math.random()* 10)
+	 crystal4 = Math.floor(Math.random()* 10)
+	 count = 0;
+	$("#count").html("My current count is: " + count);
+
+
+	}
+
+	$("#count").html("My current count is: " + count);
+	$('#wins').html("Wins:" + wins);
+	$('#losses').html("Losses:" + losses);
+	$("#crystal1").on("click", function(){
+	    count = count +crystal1;
+	    $('#count').html("Your Score is:" + count);
+	    console.log(crystal1);
+
+	// Crystal One   
+
+	if (count === winningNumber) {
+		alert("You Win!")
+		wins++;
+		$('#wins').html("Wins:" + wins);
+		reset()
+		crystal1 = Math.floor(Math.random()* 10)
+	} 
+	
+		else if (count > winningNumber) {
+		alert("You Lose") 
+		losses++;
+		crystal1 = Math.floor(Math.random()* 10)
+		$('#losses').html("Losses:" + losses);
+		reset()
+	 }
+	
+
+	         
+	 });
+
+	// Crystal Two
+
+	 $("#crystal2").on("click", function(){
+	 	count = count + crystal2;
+	 	$('#count').html("Your Score is:" + count);
+	    console.log(crystal2);
+		$('#wins').html("Wins:" + wins);
+	    
+
+	if (count === winningNumber) {
+		alert("You Win!")
+		wins++;
+		$('#wins').html("Wins:" + wins);
+		crystal2 = Math.floor(Math.random()* 10)
+		reset()
+	} 
+		
+		else if (count > winningNumber) {
+		alert("You Lose") 
+		losses++;
+		crystal2 = Math.floor(Math.random()* 10)
+		$('#losses').html("Losses:" + losses);
+		reset()
+		
+	}
+	
+	  });
+
+	// Crystal Three
+
+	  $("#crystal3").on("click", function(){
+	 	count = count +crystal3;
+	 	$('#count').html("Your Score is:" + count);
+	    console.log(crystal3);
+
+	if (count === winningNumber) {
+		alert("You Win!")
+		wins++;
+		$('#wins').html("Wins:" + wins);
+		crystal3 = Math.floor(Math.random()* 20)
+		reset()
+	}
+	
+		else if (count > winningNumber) {
+		alert("You Lose") 
+		losses++;
+		crystal3 = Math.floor(Math.random()* 20)
+		$('#losses').html("Losses:" + losses);
+		reset()
+	}
+	
+	          
+	});
+
+	// Crystal Four
+
+	$("#crystal4").on("click", function(){
+	    count = count +crystal4;
+	 	$('#count').html("Your Score is:" + count);
+		console.log(crystal4);
+	         
+	if (count === winningNumber) {
+		alert("You Win!")
+		crystal4 = Math.floor(Math.random()* 10)
+		wins++;
+		$('#wins').html("Wins:" + wins);
+		winningNumber = Math.floor(Math.random()* 300)
+		reset()
+
+		
+	}
+
+		else if (count > winningNumber) {
+		alert("You Lose")
+		crystal4 = Math.floor(Math.random()* 10) 
+		losses++;
+		$('#losses').html("Losses:" + losses);
+		reset()
+
+	}
+	
+	});
+	});
+</script>
+</body>
+</html>
+
+

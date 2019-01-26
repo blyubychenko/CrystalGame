@@ -1,0 +1,30 @@
+
+<style type="text/css">
+	.center {
+	    margin: auto;
+	    width: 25%;
+	    padding: 10px;
+	}
+	body  { 
+	    background-image: url("http://vignette2.wikia.nocookie.net/bejeweled/images/5/56/Bejeweled_Blitz_-_x1.jpg/revision/latest?cb=20131117090832");
+	    background-color: #cccccc;
+	}
+	button { border-style: double; color: purple;}
+	h2 { color: pink; }
+	#count { color: pink; font-size: 200%;  font-weight: 900;
+	}
+
+	#theNumber {
+		color: pink; font-size: 250%;  font-weight: 900;
+	}
+
+	#wins{
+		color: pink; font-size: 250%;  font-weight: 900;
+
+	}
+
+	#losses{
+		color: pink; font-size: 250%;  font-weight: 900;
+
+	}
+</style>
